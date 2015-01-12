@@ -1,0 +1,31 @@
+<html ng-app = "userModule">
+<head>
+ 	<meta charset="utf-8">
+	<title>User Data</title>
+	<script  src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+	<script >
+	var userModule = angular.module('userModule' , []);
+	userModule.controller('userController',function($scope){
+		$scope.user = {};	 
+
+	});
+	</script>
+	</head>
+	<body ng-controller = "userController">
+	 First Name:<input ng-model="user.firstName" type="text"/><br><br>
+    Last Name:<input ng-model="user.lastName" type="text"/><br><br>
+		Gender:<select ng-model="user.gender">
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+		</select><br><br>
+		Marital Status:<br><input type="radio" name="status" ng-model="user.maritalStatus" value="Single">Single<br>
+						<input type="radio" name="status"  ng-model="user.maritalStatus" value="Married"/>Married<br><br>
+	    Hobbies:<br>
+	    <input type = "checkbox" name = "hobby" ng-model = "user.Hobbies1"  ng-true-value="Sports" >Sports<br>
+	    <input type = "checkbox" name = "hobby" ng-model = "user.Hobbies2" ng-true-value="Singing" >Singing<br>
+	    <input type = "checkbox" name = "hobby" ng-model = "user.Hobbies3" ng-true-value="Reading" >Reading<br><br><br>
+	    User Details :<br>{{user}}
+
+	</body>
+
+</html>
