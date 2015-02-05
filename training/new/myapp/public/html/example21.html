@@ -1,0 +1,43 @@
+<html ng-app = "countryApp">
+<head>
+   <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script>
+    var countryApp = angular.module('countryApp',[]);
+       var countryApp = angular.module('countryApp', []);
+     countryApp.controller('CountryCtrl',function($scope,$http){
+      $http.get('../database/countries.json').success(function(data){
+        $scope.countries = data;
+      });
+      $scope.sortField = 'population'; 
+      $scope.reverse = true;     
+      $scope.totalp = function(){  
+        $scope.countries.total = 0;    
+        for (var i = 0; i<$scope.countries.length; i++){
+          $scope.countries.total += $scope.countries[i].population;
+          console.log($scope.countries.total, i);
+        }       
+      }
+
+    });    
+
+    </script>
+</head>
+ <body ng-controller="CountryCtrl">
+  Search:<input ng-model="query" type="text" />
+    <table>
+      <tr>
+      <th><a href="" >Serial No</a></th>
+        <th><a href="" ng-click="sortField = 'name'; reverse = !reverse">Country</a></th>
+        <th><a href="" ng-click="sortField = 'population'; reverse = !reverse">Population</a></th>
+      </tr>
+      <tr ng-repeat="country in countries | filter:query |  orderBy : sortField :reverse ">
+        <td>{{$index+1}}
+        <td>{{country.name}}</td>
+        <td ng-init="totalp()">{{country.population}} </td>        
+      </tr>
+      <tr><a href="" ng-click="totalp()">Total</a>{{countries.total}}<td></td>
+    </table>
+    </body>
+</html>
