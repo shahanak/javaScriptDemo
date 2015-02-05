@@ -1,0 +1,63 @@
+<html ng-app="countryApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Angular js</title>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script> </script>
+		<script>
+		 var countryApp = angular.module('countryApp', ['ngRoute']);
+		 countryApp.config(function($routeProvider){
+		 	$routeProvider.
+		 	when('/',{
+		 			templateUrl: 'country-list.html',
+	            	controller: 'CountryListCtrl'
+		 	}).
+		    when('/:countryName', {
+		 		templateUrl: 'country-detail.html',
+	            controller: 'CountryDetailCtrl'
+		 	}).
+		 	otherwise({
+		 		redirectTo: '/'
+		 	});
+		 });
+		 countryApp.factory('service' , function($http){
+		 	var cachedData;
+		 	function getData(callback){
+		 		if(cachedData){
+		 			callback(cachedData);
+		 		}else{
+		 			$http.get('../database/countryFlag.json').success(function(data){
+		 				cachedData = data;
+		 				callback(cachedData);
+		 			});
+		 		}
+		 	}
+		 	return {
+		 		list: getData,
+		 		find:function(name , callback){
+		 			getData(function(data){
+	    			var country = data.filter(function(entry){
+	    				return entry.name === name;
+	    			   	})[0];
+	    				callback(country);
+		 			});
+		 			
+		 		}
+		 	};
+		 });
+		 countryApp.controller('CountryListCtrl' , function($scope , service){
+		 	service.list(function(data){
+		 		$scope.countries = data;
+		 	});
+		 });
+		  countryApp.controller('CountryDetailCtrl' , function($scope ,$routeParams, service){
+		 	service.find($routeParams.countryName,function(data){
+		 		$scope.countryData = data;
+		 	});
+		 });
+		</script>
+	</head>
+	<body>
+	    <div ng-view></div>
+	</body>
+</html>

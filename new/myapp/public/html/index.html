@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Starter</title>
+  </head>
+  <body>
+    Name:<input type="text" id="textInput"/>
+    hai <span id="spanId">world</span>
+
+<script >
+	var textInputElemnt = document.getElementById("textInput");
+	var nameDivElement = document.getElementById("spanId");
+	textInputElemnt.addEventListener('keyup',function(){console.log("Key Up pressed");
+		var text = textInputElemnt.value;
+		nameDivElement.innerHTML = text;
+	console.log("Value = "+text);});
+	
+
+</script>
+  </body>
+</html>

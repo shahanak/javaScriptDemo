@@ -1,0 +1,65 @@
+<html ng-app="movieApp">
+<head>
+<link rel="stylesheet" type="text/css" href="../stylesheets/elemnt.css">
+<meta charSet = "utf-8">
+<title>Favourite Movies</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.22/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.22/angular-route.min.js"></script>
+<script>
+	var movieApp = angular.module('movieApp',['ngRoute']);
+	movieApp.factory('services', function($http){
+        return {
+          list: function (callback){
+            $http({
+              method: 'GET',
+              url: '../database/movies.json',
+              cache: true
+            }).success(callback);
+          },
+          find: function(url,callback){
+            $http({
+              method: 'GET',
+              url:''+url+'',
+              cache: true
+            }).success(callback);        
+          }
+        };
+      });
+	movieApp.config(function($routeProvider){
+        $routeProvider.
+          when('/', {
+            templateUrl: 'movie_list.html',
+            controller: 'movieListCtrl'
+          }).
+          when('/:id', {
+            templateUrl: 'movie_detail.html',
+            controller: 'movieDetailCtrl'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+	 movieApp.controller('movieListCtrl', function($scope, services){
+        services.list(function(movies){
+          $scope.movies = movies;  
+
+        });
+      });
+
+      movieApp.controller('movieDetailCtrl', function($scope, $routeParams, services){
+      services.list(function(movies){
+             $scope.movies = movies;    
+             $scope.url =  $scope.movies[$routeParams.id -1].url;    
+        services.find($scope.url, function(movies){        	
+          $scope.movieData = movies;
+          console.log($scope.movieData);  
+           }); 
+        });
+      });
+      
+</script>
+</head>
+ <body>
+    <div ng-view></div> 
+  </body>
+</html>

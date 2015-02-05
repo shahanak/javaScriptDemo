@@ -1,0 +1,21 @@
+<html ng-app = "countryApp">
+	<head>
+	 <meta charset="utf-8">
+		<title>Angular.js Example</title>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+		<script>
+		var countryApp = angular.module('countryApp',[]);
+		countryApp.controller('countryCtrl',function($scope,$http){
+			$http.get('//www.omdbapi.com/?t=frozen&y=&plot=short&r=json').success(function(data){
+				$scope.countries = data;
+				console.log($scope.countries);
+			});
+		});
+		</script>
+	</head>
+	<body ng-controller = "countryCtrl">
+	<a href="http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json">Frozen</a>
+	
+	</body>
+</html>
+

@@ -1,0 +1,3 @@
+curl -v -H "Authorization: token a76a1e588dc8479511aab09613175fc0bd5fa607" -X GET https://api.github.com/user/starred/
+Jesnasaravarghese/javascriptDemo
+$scope.repos[i].full_name

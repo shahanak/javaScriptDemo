@@ -1,0 +1,16 @@
+var countryApp = angular.module('countryApp', ['ngRoute','countryControllers','countriesFactory','countryDirective']);
+ countryApp.config(function($routeProvider){
+ 	$routeProvider.
+ 	when('/',{
+ 			templateUrl: 'country-list.html',
+        	controller: 'CountryListCtrl'
+ 	}).
+    when('/:countryName', {
+ 		templateUrl: 'country-detail.html',
+        controller: 'CountryDetailCtrl'
+ 	}).
+ 	otherwise({
+ 		redirectTo: '/'
+ 	});
+ });
+ 

@@ -1,0 +1,7 @@
+<h1>{{countryData.name}}</h1>
+<ul>
+  	<li>Flag : <img src ="{{countryData.flagURL}}" width = "100"></li>
+  	<li>Population: {{countryData.population | number }}</li>
+  	<li>Capital: {{countryData.capital}}</li>
+ 	<li>GDP: {{countryData.gdp | currency }}</li>
+</ul>

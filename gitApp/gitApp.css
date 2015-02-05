@@ -1,0 +1,28 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ 
+body, html { margin: 0; }
+p { margin: 0; }
+input { width: 100%; }
+ 
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+ 
+div.repo {
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+ 
+#search, #repo, #user { float: left; }
+#search { width: 20%; }
+#repo { width: 60%; }
+#user { width: 20%; }

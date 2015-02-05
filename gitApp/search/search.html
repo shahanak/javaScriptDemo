@@ -1,0 +1,17 @@
+<div class="col-md-12" ng-controller="SearchCtrl">
+    <div id="search">
+    <input ng-model="query" placeholder="search" ng-keyup="$event.keyCode == 13 && executeSearch()">
+    <div class="repo" ng-repeat="repo in repos" ng-click="openRepo(repo.name)">
+        <strong>{{ repo.full_name }}</strong>
+        <p>{{ repo.description }}</p>
+    </div>    
+</div>
+
+<div id="user">
+    <strong>{{ user.login }}</strong>
+    <div class="repo" ng-repeat="repo in user.repos" ng-click="openRepo(repo.name)">
+        <strong>{{ repo.name }}</strong>
+        <p>{{ repo.description }}</p>
+    </div>
+</div>
+</div>

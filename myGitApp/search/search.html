@@ -1,0 +1,20 @@
+<div class="col-md-12" ng-controller="SearchCtrl">
+<h1 align="left
+">Git Hub API</h1>
+ <div id="search">
+ <br><br><br><br>
+ Search:
+    <input ng-model="query"  ng-keyup="$event.keyCode == 13 && executeSearch()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a ng-href="#/listStarred">My Starred Repositories</a><br><br>
+
+    <div  ng-repeat="repo in repos" ng-click="openRepo(repo.name)">
+        <table border = "1" width="1000">
+        <tr><td width="20%"><strong>{{ repo.full_name }}</strong></td>
+        <td width="70%">{{ repo.description }}</td>
+        <td width="70%"><button ng-click="starfun(repo)" width="200">{{repo.star}}</button><button width="200" ng-click="watchfun(repo)">{{repo.watch}}</button></td></tr>
+    </div> 
+    </table>  
+
+</div>
+</div>
+
