@@ -1,0 +1,26 @@
+<div class="col-md-12" ng-controller="MenudisplayCtrl">
+	<h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px"><a href="#/home">Home</a>&nbsp&nbsp
+	<a href="#/signup">Sign Up</a>&nbsp&nbsp&nbsp&nbsp
+	<a href="#/login">{{login}}</a>&nbsp&nbsp&nbsp&nbsp	
+	<a href="#/menuDisplay">Menu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input class="cart" type="submit" ng-click="viewCart()" value="{{cart}}" >&nbsp&nbsp&nbsp&nbsp
+	<a href="#/">{{logout}}</a></font></h1>
+	
+<div class= "container">
+	<div class="main" ng-repeat="pizza in pizzas">	
+		<P ><font color="red" size="4px"><b>{{pizza.name}}({{pizza.size}})</b><br>
+		
+		<img src="{{pizza.image}}" width="50%"></font></P>
+		<p><font size="2px" align="center"><B>
+		{{pizza.description}}</B></font>
+		</p>
+		<div class="inner"><font color="white" size="4px">
+		Rs.{{pizza.price}}/-</font>
+		</div>
+		<table>
+		<tr><input class="newStyle" type="submit" ng-click="orderNow(pizza)" value="Order Now">
+		<input class="newStyle" type="submit" ng-click="addToCart(pizza)" value="Add to Cart"></tr></table>
+	</div>
+</div>
+
+</div>

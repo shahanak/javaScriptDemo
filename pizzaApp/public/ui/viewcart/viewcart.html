@@ -1,0 +1,30 @@
+<div class="col-md-12" ng-controller="ViewcartCtrl">
+	<h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px">
+	<a href="#/home">Home</a>&nbsp&nbsp
+	<a href="#/signup">Sign Up</a>&nbsp&nbsp&nbsp&nbsp
+	<a href="#/login">{{login}}</a>&nbsp&nbsp&nbsp&nbsp	
+	<a href="#/menuDisplay">Menu</a>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input class="cart" type="submit" ng-click="viewCart()" value="{{cart}}" >
+	<a href="#/">{{logout}}</a></font></h1>	
+	<div class="container">
+		<div class="main" ng-show="show">
+			<div ng-repeat="pizza in cartData">
+				<font color="red" size="4px"><b>{{pizza.name}}({{pizza.size}})</b><br>
+				<img src="{{pizza.image}}" width="40%"></font>
+				<p><font size="2px" align="center"><B>
+				{{pizza.description}}</B></font>
+				</p>
+				<div class="inner"><font color="white" size="4px">
+				Rs.{{pizza.price}}/-</font>
+				</div>
+				<font color="blue"  size="4px">Quantity:</font>
+				<input class="quantity" type="number"  min=1 ng-model="pizza.quantity" required><br>
+			</div>
+			<div ng-show="show" >				
+				<input  type="submit" ng-click="checkout()" value="Check Out">
+			</div>	
+		</div>	
+		
+	</div>	
+</div>

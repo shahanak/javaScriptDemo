@@ -1,0 +1,223 @@
+body {
+    margin: 0px;
+  padding: 0px;
+  background-image: url(bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+form {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+}
+a {
+  color: #F4B880;
+}
+
+a:hover {
+  text-decoration: none;
+}
+h2 {
+    color: #8B0000;
+    text-align: center;
+    font-size: 40px;
+}
+h1 {
+    color: white;
+    text-align: left;
+}
+h1.new{
+  font-size: 20px;
+}
+
+p {
+    font-family: "Times New Roman";
+    font-size: 20px;
+}
+div.container{
+
+width: 960px;
+height: 610px;
+margin:50px auto;
+font-family: 'Droid Serif', serif;
+position:relative;
+
+}
+div.main1{
+width:420px;
+float:left;
+padding: 10px 55px 40px;
+background-color: rgba(187, 255, 184, 0.65);
+border: 15px solid white;
+box-shadow: 0 0 10px;
+border-radius: 2px;
+font-size: 13px;
+}
+div.main{
+width: 380px;
+float:left;
+padding: 10px 55px 40px;
+background-color: rgba(187, 255, 184, 0.65);
+border: 15px solid white;
+box-shadow: 0 0 10px;
+border-radius: 2px;
+font-size: 13px;
+}
+div.inner{
+width: 250px;
+height: 35px;
+padding:5px 25px;
+float:center;
+background-color:#CC0000;
+border-radius: 2px;
+text-align: center;
+}
+
+input[type=text],[type=password],[type=number],[type=email] {
+width: 97.7%;
+height: 34px;
+padding-left: 5px;
+margin-bottom: 20px;
+margin-top: 8px;
+box-shadow: 0 0 5px #00F5FF;
+border: 2px solid #00F5FF;
+color: #4f4f4f;
+font-size: 16px;
+}
+label{
+color: #464646;
+text-shadow: 0 1px 0 #fff;
+font-size: 14px;
+font-weight: bold;
+}
+input[type="submit"]{  
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+padding:5px 25px; /*add some padding to the inside of the button*/
+background:#35b128; /*the colour of the button*/
+border:1px solid #33842a; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px ;
+/*give the button a drop shadow*/
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size:1.1em;
+}
+select
+{ background: white;
+  width: 97.7%;
+  height: 34px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+  border: 2px solid #00F5FF;
+  color: #4f4f4f;
+   border-radius: 1;
+   height: 34px;
+   -webkit-appearance: none;
+}
+input[type="submit"].newStyle{  
+  width: 50%;
+height: 34px;
+cursor:pointer; 
+background:#35b128;
+border:1px solid #33842a; 
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px ;
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+color:#f3f3f3;
+font-size:14px;
+}
+input[type="submit"].cart{  
+cursor:pointer; 
+ width: 7.1%;
+background:#8B0000;
+height: 40px;
+border:0px ;
+background-image: url("cart_icon.png") ;
+background-repeat: no-repeat;
+background-position: center;
+background-size: 135%;
+font-color:black;
+font-size:14px;
+}
+input[type=number].number {
+width: 6%;
+height: 34px;
+padding-left: 5px;
+margin-bottom: 20px;
+margin-top: 8px;
+box-shadow: 0 0 5px #00F5FF;
+border: 2px solid #00F5FF;
+color: #4f4f4f;
+font-size: 16px;
+}
+input[type=number].quantity {
+width: 20%;
+height: 34px;
+padding-left: 5px;
+margin-bottom: 20px;
+margin-top: 8px;
+box-shadow: 0 0 5px #00F5FF;
+border: 2px solid #00F5FF;
+color: #4f4f4f;
+font-size: 16px;
+}
+
+input[type="submit"].confirm{
+   margin: 2em auto;
+  width: 15%;
+height: 50px;
+cursor:pointer; 
+background:#35b128;
+position: relative;
+border:1px solid #33842a; 
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px ;
+-webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+-moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+color:#f3f3f3;
+font-size:14px;
+}
+table#t01, td, th {
+    border: 0px ;
+    text-align: center;
+}
+
+th#t01 {
+    background-color: green;
+    color: white;
+}
+td#t01  {
+    padding: 25px;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #98FB98;
+    color: black;
+    border: 2px;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:white;
+   color: black;
+}
+span.header{
+  
+  background-image:url("d4.jpeg");
+  width: 1000px;
+  height: 100px;
+  top: 0;
+  left:0;       
+  color : white;
+}

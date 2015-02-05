@@ -1,0 +1,55 @@
+<div class="col-md-12" ng-controller="OrdercartCtrl">
+ 	<h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px"><a href="#/home">Home</a>&nbsp&nbsp
+	&nbsp&nbsp
+	<a href="#/menuDisplay">Menu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input class="cart" type="submit" ng-click="" value="{{cart}}" >
+	<a href="#/">{{logout}}</a></font></h1>
+<p><br><br></p>
+<h2>DELIVERY</h2>
+	<div class="container">
+		<div class="main">
+			<h3>User Details:</h3>
+			<p><font color="#8B0000"><b>
+			Name:{{user.fname}}<br><br>
+			Mob:{{user.mobile}}<br><br>
+			<h4>Delivery Address</h4>
+			{{user.address1}}<br>
+			{{user.address2}}<br>
+			{{user.city}}<br>
+			{{user.state}}<br>
+			{{user.pincode}}</b></font></p>
+		
+		<h3>Order Details:</h3>
+		<div ng-repeat="pizza in pizzas">
+			<div>
+				
+				<P><font color="red" size="4px"><b>{{pizza.name}}({{pizza.size}})</b><br>
+				
+				<img src="{{pizza.image}}" width="40%"></font></P>
+				<p><font size="2px" align="center"><B>
+				{{pizza.description}}</B></font>
+				</p>
+				<div class="inner"><font color="white" size="4px">
+				Rs.{{pizza.price}}/-</font>
+				</div>
+			</div>
+			<div ng-hide="hide">
+				<font color="blue"  size="5px">Quantity:</font>
+				<input type="number" class="quantity" min=1 ng-model="pizza.quantity" required>
+	    	</div>    	
+			<div ng-show="hide">
+				<p><font color="blue" size="5px">Quantity:</font>{{pizza.quantity}}<br><br></p>				
+			</div>
+		</div>
+		<div ng-hide="hide">
+				<br><br><br>
+			    <input  type="submit" ng-click="confirm()" value="Confirm Order">
+		</div>
+		<div ng-show="single">
+				<font color="blue" size="5px">Total Amount:</font>{{order.amount}}<br><br><br>			
+				<input  type="submit" ng-click="checkoutCart()" value="Check Out">
+		</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,38 @@
+<div class="col-md-12" ng-controller="LoginCtrl">
+	<h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px">
+	<a href="#/home">Home</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<a href="#/signup">Sign Up</a>&nbsp&nbsp&nbsp&nbsp
+	<a href="#/menuDisplay">Menu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input class="cart" type="submit" ng-click="viewCart()" value="{{cart}}" ></font></h1>
+<div class="container">
+<div class="main">
+<h2>Login</h2>
+<table>
+	<tr><td><input type="email" 
+			placeholder="Email Id"
+			name="email"
+        	ng-model="username"
+    		required></td>
+	</tr>
+	<tr><td><input type="password"
+      	 placeholder="Password"
+	       name="password"
+	       ng-model="password"
+	       ng-minlength=6
+	       ng-maxlength=20 required /></td>
+	    <td ng-show="form.$submitted || form.password.$touched"></td>
+	    <td ng-show="form.password.$error.required && form.password.$dirty">Enter password.</td>
+	    <td ng-show="form.password.$error.minlength">
+	                Your password is required to be at least 6 characters</td>
+	    <td ng-show="form.password.$error.maxlength">
+	               Your password cannot be longer than 20 characters</td>
+    </tr>
+    <tr>
+    <td><input type="submit"
+		   value="Login"
+		   name="register" ng-click="login(username,password)"></td>
+    	<td><font color="red">{{label}}</font></td>
+    </tr>
+</table>
+
+</div>

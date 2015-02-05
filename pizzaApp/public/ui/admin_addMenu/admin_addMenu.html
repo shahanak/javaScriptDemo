@@ -1,0 +1,57 @@
+<div class="col-md-12" ng-controller="AdminAddmenuCtrl">
+	<h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px">
+	<a href="#/home">Home</a>&nbsp&nbsp	
+	<a href="#/admin_addMenu">Add Item</a>&nbsp&nbsp
+	<a href="#/viewOrder">View Orders</a>&nbsp&nbsp&nbsp&nbsp	
+	<a href="#/menuDisplay">Menu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	
+	<a href="#/logout">{{logout}}</a></font></h1>
+<div class="container">
+<div class="main1">
+<h2>Add Pizza Details</h2>
+<table align="center">
+<form name="form">
+	<tr><td><label>Name:</label></td>
+		<td><input type = "text" 
+		   placeholder="Name"
+		   ng-model="item.name"
+		   required></td></tr>
+   <tr><td><label>Type:</label></td>
+   	   <td> <select ng-model="item.type" >
+   	   		 <option value="" selected disabled>Please select</option>
+			<option value="Veg" >Veg</option>
+			<option value="non Veg" >Non Veg</option>			
+			</select>    	
+   </td></tr>   
+   <tr><td><label>description:</label></td>
+   <td><input type = "text" 
+		   placeholder="Special Ingrediants(seperate with comma)"
+		   ng-model="item.description"
+		   required></td></tr>
+   <tr><td><label>Size:</label></td>
+		<td> <select ng-model="item.size" >
+			 	<option value="" selected disabled>Please select</option>
+				<option value="Personel" >Personal</option>
+				<option value="Medium" >Medium</option>
+				<option value="Large" >Large</option>			
+			</select>    	
+</td></tr><br/><br/>
+<tr><td><label>Image:</label></td>
+	<td><input type="file"  id ="image" name="image"/>
+	</td></tr>
+<tr><td><label>Price:</label></td>
+    <td>Rs.<input type = "text" 
+		   placeholder="Price"
+		   ng-model="item.price"
+		   required></td></tr>
+<tr></tr>
+<tr></tr>
+<tr><td></td>
+<td><input type="submit"
+		   value="Add"
+		   name="add" ng-click="addItem(item)"></td></tr>	
+<tr><td><label><font color="blue">{{label}}</font></label></td></tr>
+</form>
+</table>
+</div>
+</div>
+</div>

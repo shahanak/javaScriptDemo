@@ -1,0 +1,151 @@
+<div class="col-md-12" ng-controller="SignupCtrl">
+  <h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px">
+  <a href="#/home">Home</a>&nbsp&nbsp
+  <a href="#/signup">Sign Up</a>&nbsp&nbsp&nbsp&nbsp
+  <a href="#/login">Login</a>&nbsp&nbsp&nbsp&nbsp
+  <a href="#/menuDisplay">Menu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  <input class="cart" type="submit" ng-click="viewCart()" value="{{cart}}" ></font></h1>
+  <p><br><br></p>
+  <h2>Register</h2>
+<div class="container">
+<div class="main">
+<h3 align="center" >General Information</h3>
+<table  bgcolor="99FFFF" align="left">
+<form name="form" >
+<tr><td><label>First Name:</label></td>
+<td><input type="text" 
+		placeholder="First Name" 
+		name="fname"
+	    ng-model="user.fname"
+		required></td>
+    <td ng-show="form.$submitted || form.fname.$touched"></td>
+    <td ng-show="form.fname.$error.required && form.fname.$dirty">Enter name.</td>
+    <td ng-show="form.fname.$error.minlength">
+                Your name is required to be at least 6 characters</td>
+    <td ng-show="form.fname.$error.maxlength">
+               Your name cannot be longer than 20 characters</td></tr>
+<tr><td><label>Second Name:</label></td>
+<td><input type="text" 
+		placeholder="Last Name"
+		name="lname"
+	    ng-model="user.lname"
+		required></td>
+	<td ng-show="form.$submitted || form.lname.$touched"></td>
+    <td ng-show="form.lname.$error.required && form.lname.$dirty">Enter last name.</td>
+</tr>
+<tr><td><label>Mobile Number:</label></td>
+<td><input type="number" 
+		placeholder="Mobile Number" 
+		name="mobile"
+        ng-model="user.mobile"
+		ng-minlength=10 ng-maxlength=10 
+		required></td>
+    <td ng-show="form.$submitted || form.mobile.$touched"></td>
+    <td ng-show="form.mobile.$error.required && form.mobile.$dirty">Enter Mobile number.</td>
+    <td ng-show="form.mobile.$error.minlength">
+                Your Mobile number is required to be at least 6 characters</td>
+    <td ng-show="form.mobile.$error.maxlength">
+               Your Mobile number cannot be longer than 20 characters</td></tr>
+<tr><td><label>Email Id:</label></td>
+ <td><input type="email" 
+    	placeholder="Email"	
+    	name="email"
+        ng-model="user.email"
+    	required></td>
+    <td ng-show="form.$submitted || form.email.$touched"></td>
+    <td ng-show="form.email.$error.required && form.email.$dirty">Enter Valid Email ID.</td>     </tr>
+<tr><td><label>Password:</label></td>
+<td><input type="password"
+       placeholder="Password"
+       name="password"
+       ng-model="user.password"
+       ng-minlength=6
+       ng-maxlength=20 required /></td>
+    <td ng-show="form.$submitted || form.password.$touched"></td>
+    <td ng-show="form.password.$error.required && form.password.$dirty">Enter password.</td>
+    <td ng-show="form.password.$error.minlength">
+                Your password is required to be at least 6 characters</td>
+    <td ng-show="form.password.$error.maxlength">
+               Your password cannot be longer than 20 characters</td>
+</tr>
+<tr><td><label>Confirm password:</label></td>
+<td><input type="password"
+       placeholder="conform password"
+       name="cpassword"
+       ng-model="cpassword"
+       ng-minlength=6
+       ng-maxlength=20 required /></td>
+    <td ng-show="form.$submitted || form.cpassword.$touched"></td>
+    <td ng-show="form.cpassword.$error.required && form.cpassword.$dirty">Enter password.</td>
+    <td ng-show="form.cpassword.$error.minlength">
+                Your password is required to be at least 6 characters</td>
+    <td ng-show="form.cpassword.$error.maxlength">
+               Your password cannot be longer than 20 characters</td>
+</tr>
+<br><br>
+<tr>
+<tr><td><label>Address Line1:</label></td>
+    <td><input type="text"
+       placeholder="Address Line1"
+       name="address1"
+       ng-model="user.address1"
+       required /></td>
+    <td ng-show="form.$submitted || form.address1.$touched "></td>
+    <td ng-show="form.address1.$error.required && form.address1.$dirty">Enter Address Line1.</td>
+</tr>
+
+<tr><td><label>Address Line2:</label></td>
+    <td><input type="text"
+       placeholder="Address Line2"
+       name="address2"
+       ng-model="user.address2"
+       required/></td>
+       
+         <td ng-show="form.$submitted || form.address2.$touched"></td>
+    <td ng-show="form.address2.$error.required && form.address2.$dirty">Enter Address Line2.</td>
+</tr>
+<tr><td><label>City:</label></td>
+    <td><input type="text"
+       placeholder="City"
+       name="city"
+       ng-model="user.city"
+       required/></td>
+       <td ng-show="form.$submitted || form.city.$touched"></td>
+    <td ng-show="form.city.$error.required && form.city.$dirty">Enter City.</td>
+</tr>
+<tr><td><label>State:</label></td>
+<td><input type="text"
+       placeholder="State"
+       name="state"
+       ng-model="user.state"
+       required/></td>
+         <td ng-show="form.$submitted || form.state.$touched"></td>
+    <td ng-show="form.state.$error.required && form.state.$dirty">Enter State.</td>
+</tr>
+<tr><td><label>PinCode:</label></td>
+    <td><input type="number"
+       placeholder="PinCode"
+       name="pincode"
+       ng-model="user.pincode"
+       ng-minlength=6
+       ng-maxlength=6
+       required/></td>
+         <td ng-show="form.$submitted "></td>
+    <td ng-show="form.pincode.$error.required && form.pincode.$dirty">Enter PinCode.</td>
+    <td ng-show="form.pincode.$error.minlength">
+                pin code should be exactly 6 characters</td>
+    <td ng-show="form.pincode.$error.maxlength">
+               pin code should be exactly 6 characters</td>
+</tr>
+
+<tr>
+<td></td>
+<td><input type="submit"
+		   value="Register"
+		   name="register" ng-click="register(user)" ng-disabled="form.$invalid"></td></tr>
+</form>
+</table>
+<br><br><br><br><br><br><br><br>
+</div>
+</div>
+</div>

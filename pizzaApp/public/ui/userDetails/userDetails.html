@@ -1,0 +1,95 @@
+<div class="col-md-12" ng-controller="UserdetailsCtrl">
+	<h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px">
+	<a href="#/home">Home</a>&nbsp&nbsp
+	<a href="#/login">{{login}}</a>&nbsp&nbsp&nbsp&nbsp
+	<a href="#/menuDisplay">Menu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input class="cart" type="submit" ng-click="viewCart()" value="{{cart}}" >
+	<a href="#/">{{logout}}</a></font></h1>
+	<div class="col-md-12" ng-controller="SignupCtrl">
+	<p><br><br></p><h2>DELIVERY</h2>
+		<div class="container">
+			<div class="main">			
+			<h3 align="cegnter" >General Information</h3>
+			<table  bgcolor="99FFFF" align="left">
+				<form name="form" >
+					<tr><td><label>Full Name:</label></td>
+					<td><input type="text" 
+							placeholder="First Name" 
+							name="fname"
+						    ng-model="user.fname"
+							required></td>	</tr>
+
+					<tr><td><label>Mobile Number:</label></td>
+					<td><input type="number" 
+							placeholder="Mobile Number" 
+							name="mobile"
+					        ng-model="user.mobile"
+							ng-minlength=10 ng-maxlength=10 
+							required></td></tr>
+					<tr><td></td><td><h3>Shipping Address</h3></td></tr>
+					<tr><td><label>Address Line1:</label></td>
+					    <td><input type="text"
+					       placeholder="Address Line1"
+					       name="address1"
+					       ng-model="user.address1"
+					       required /></td>
+					    <td ng-show="form.$submitted || form.address1.$touched "></td>
+					    <td ng-show="form.address1.$error.required && form.address1.$dirty">Enter Address Line1.</td>
+					</tr>
+
+					<tr><td><label>Address Line2:</label></td>
+					    <td><input type="text"
+					       placeholder="Address Line2"
+					       name="address2"
+					       ng-model="user.address2"
+					       required/></td>
+					       
+					         <td ng-show="form.$submitted || form.address2.$touched"></td>
+					    <td ng-show="form.address2.$error.required && form.address2.$dirty">Enter Address Line2.</td>
+					</tr>
+					<tr><td><label>City:</label></td>
+					    <td><input type="text"
+					       placeholder="City"
+					       name="city"
+					       ng-model="user.city"
+					       required/></td>
+					       <td ng-show="form.$submitted || form.city.$touched"></td>
+					    <td ng-show="form.city.$error.required && form.city.$dirty">Enter City.</td>
+					</tr>
+					<tr><td><label>State:</label></td>
+					<td><input type="text"
+					       placeholder="State"
+					       name="state"
+					       ng-model="user.state"
+					       required/></td>
+					         <td ng-show="form.$submitted || form.state.$touched"></td>
+					    <td ng-show="form.state.$error.required && form.state.$dirty">Enter State.</td>
+					</tr>
+					<tr><td><label>PinCode:</label></td>
+					    <td><input type="number"
+					       placeholder="PinCode"
+					       name="pincode"
+					       ng-model="user.pincode"
+					       ng-minlength=6
+					       ng-maxlength=6
+					       required/></td>
+					         <td ng-show="form.$submitted "></td>
+					    <td ng-show="form.pincode.$error.required && form.pincode.$dirty">Enter PinCode.</td>
+					    <td ng-show="form.pincode.$error.minlength">
+					                pin code should be exactly 6 characters</td>
+					    <td ng-show="form.pincode.$error.maxlength">
+					               pin code should be exactly 6 characters</td>
+					</tr>
+
+					<tr>
+					<td></td>
+					<td><input type="submit"
+							   value="Proceed"
+							   name="proceed" ng-click="proceed(user)"></td></tr>
+				</form>
+			</table>
+			<br><br><br><br><br><br><br><br>
+			</div>
+		</div>
+	</div>
+</div>

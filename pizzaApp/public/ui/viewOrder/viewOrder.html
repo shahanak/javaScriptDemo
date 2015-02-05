@@ -1,0 +1,36 @@
+<div class="col-md-12" ng-controller="VieworderCtrl">
+	<h1>Pizza Corner&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<font size="4px">
+	<a href="#/home">Home</a>&nbsp&nbsp
+	<a href="#/signup">Sign Up</a>&nbsp&nbsp&nbsp&nbsp
+	<a href="#/menuDisplay">Menu</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<a href="#/">{{logout}}</a></font></h1>	
+	<h2></h2><br><br><br>
+	<table id = 't01' border="5">
+	<tr></tr><tr></tr>
+		<tr><th>Date&Time</th><th>&nbsp&nbsp&nbsp&nbsp</th><th>Customer Name</th><th>&nbsp&nbsp&nbsp&nbsp</th><th>Mobile No:</th><th>&nbsp&nbsp&nbsp&nbsp</th><th>Amount</th><th>&nbsp&nbsp&nbsp&nbsp</th><th>Status</th><th>&nbsp&nbsp&nbsp&nbsp</th><th>Actions</th></tr>
+		<tr ng-repeat="order in orders">
+		<td>{{order.date}}</td><td></td>
+		<td>{{order.user.fname}}</td><td></td>
+		<td>{{order.user.mobile}}</td><td></td>
+		<td>Rs.{{order.amount}}/-</td><td></td>
+		<td>{{order.status}}</td><td></td>
+		<td><input  type="submit" value="view Order" ng-click="viewOrder(order)"></td>
+		</tr>
+	</table>
+	<div class="container">	
+	<div class="main" ng-show="show" ng-repeat="pizza in pizzas">			
+			<P><font color="red" size="4px"><b>{{pizza.name}}({{pizza.size}})</b><br>
+			
+			<img src="{{pizza.image}}" width="40%"></font></P>
+			<p><font size="2px" align="center"><B>
+			{{pizza.description}}</B></font>
+			</p>
+			<div class="inner"><font color="white" size="4px">
+			Rs.{{pizza.price}}/-</font>
+			<p><font color="blue" size="5px">Quantity:</font>{{pizza.quantity}}<br><br></p>
+			</div>
+		</div>
+	</div>
+
+	</div>	
+</div>
